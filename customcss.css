@@ -1,0 +1,106 @@
+/* --- Ẩn popup mặc định --- */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    /* Nền tối hơn */
+    /* Nền tối hơn */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+/* --- Hiển thị popup khi có class .show --- */
+.overlay.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* --- Hộp nội dung của popup --- */
+.popup {
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.call-text {
+    text-decoration: none;
+    font-size: 28px;
+    margin-bottom: 16px;
+    color: #007bff;
+}
+
+/* Chỉnh popup trên laptop */
+@media (min-width: 768px) {
+    .popup {
+        width: 80vw;
+        /* Chiếm 80% chiều rộng màn hình */
+        height: 80vh;
+        /* Chiếm 80% chiều cao màn hình */
+        max-width: none;
+        max-height: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .popup-logo {
+        width: 150px;
+        /* Điều chỉnh kích thước logo */
+        height: auto;
+    }
+}
+
+/* --- Logo trong popup --- */
+.popup-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* --- Tiêu đề --- */
+.popup h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* --- Nội dung --- */
+.popup p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* --- Nút gọi --- */
+.call-btn {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.call-btn:hover {
+    background: #0056b3;
+}
